@@ -37,7 +37,11 @@ const Content = styled.div`
         min-height: 150px;
         width: 100%;
         margin-top: 0.5rem;
-      }
+      }      
+    }
+    .info {
+      height: 0;
+      visibility: hidden;
     }
   }
 `
@@ -52,7 +56,7 @@ const Contact = () => (
       <Content>
         <h1>Contact</h1>
         <p>Super cool intro text to get people contacting me! It uses Netlify's form feature.</p>
-        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field" action="/success">
+        <form name="contact-form" method="post" data-netlify="true" data-netlify-honeypot="info-field" action="/success">
           <p>
             <label htmlFor="contact-name">
               Name
@@ -72,6 +76,7 @@ const Contact = () => (
           <p>
             <Button>Send</Button>
           </p>
+          <p class="info"><input name="info-field" /></p>
           <input type="hidden" name="form-name" value="contact-form" />
         </form>
       </Content>
